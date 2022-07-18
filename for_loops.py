@@ -69,7 +69,7 @@ print("\n-----------------\n")
 #-->TODO: Write a function that counts BACKWARDS from the given random number and prints only odd numbers
 def count_funct():
     global random
-    for count in range(random):
+    for count in range(random, 0, -1):
         if count % 2 != 0:
             print(count)
 count_funct()
