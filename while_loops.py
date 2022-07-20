@@ -115,6 +115,12 @@ def pattern():
     my_list.append(index)
     print(my_list)
     index += 1
+
+  while index > 1:
+    len(my_list)>1
+    my_list.pop()
+    print(my_list)
+    index -= 1
         
 
 pattern()
@@ -150,7 +156,4 @@ while keep_asking:
     pass
 
 #-->TODO: Challenge! write a secret word to break out of the loop!
-
-
-
 
