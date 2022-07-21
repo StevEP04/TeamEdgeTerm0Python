@@ -25,6 +25,10 @@ dictionary = {
     "name": "box",
     "is_empty": True
 }
+#dictionary open like a list where you put your inputs
+#"name" is "box" which is a string you can called it using {dictionary['box']}
+#"is_empty" is True which is a boolean you can called it using {dictionary['is_empty']}
+
 #working with the dictionary:
 dictionary["length"] = 12
 dictionary["width"] = 8
@@ -40,8 +44,12 @@ print(dictionary)
 
 ##################################  MY dictionary ########################### #/
 
-
-
+my_dictionary = {
+    "name": "Mijail",
+    "grade": 9,
+    "passed_class": True,
+    "subjects": ["Math","Earth Science","Algebra"]
+}
 
 
 
@@ -52,24 +60,28 @@ print(dictionary)
 print("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 #-->TODO: Print your dictionary you created above
-
+print(my_dictionary)
 
 #-->TODO: Update the dictionary you just created  by adding new properties and values, including list elements, in this section.
-
+my_dictionary["fav_car"] = "Lamborguini"
+my_dictionary["fav_food"] = "Pizza"
+my_dictionary["fav_books"] = ["Beauty and the beast", "50 shades of grey", "Hunger Games"]
 
 #-->TODO: Print your dictionary again and observe changes
+print(my_dictionary)
 
-
-print("------------------- CHALLENGE 3 : MEHTODS   -------------------")
+print("------------------- CHALLENGE 3 : METHODS   -------------------")
 
 
 #-->TODO: Make a method that will update your dictionary value. It should take in a dictionary and return it modified.
-
+dictionary.update(my_dictionary)
 
 #-->TODO: Call the method.
-
+print(dictionary)
 
 
 print("------------------- CHALLENGE 4 : LITERALLY   -------------------")
-
+subs = ", ".join(my_dictionary['subjects'])
 #-->TODO: Put it all together using a string literal to tell the story of your dictionary!
+
+print(f"{my_dictionary['name']} is a man, he is {my_dictionary['grade']} grade, his favorites subjects are {subs}")
