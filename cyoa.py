@@ -1,9 +1,107 @@
-#Start of the game
-#NAME: S-class Hunter
-#Classes:
+# #Start of the game
+# #NAME: S-class Hunter
+# #Classes:
 user_playing = True
 player_items = []
 Darcksmoke_is_alive = True
+
+# START OF THE FIGURES AND SOME ANIMATION 
+def monster_vs(enemy):
+    if enemy == True:
+        print("        |||||||||   |||||||| |||||||||||| |||||||||||| |          | |||| ||        |              ")
+        print("           ||    | |     ||  |          | |          | |          | |||| | |       |              ")
+        print("              |   |   |      |          | |          | |          | |||| |  |      |              ")
+        print("                |   |        |          | |          | |          | |||| |   |     |              ")
+        print("                |   |        |          | |          | |||||||||||| |||| |    |    |              ")
+        print("                |   |        |          | |          | |          | |||| |     |   |              ")
+        print("                |   |        |          | |          | |          | |||| |      |  |              ")
+        print("                |   |        |          | |          | |          | |||| |       | |              ")
+        print("                |||||        |||||||||||| |||||||||||| |          | |||| |        ||              ")
+        print("\n\n\n                                                                                                  ")
+        print("                         \/                /    ///////////                    ")
+        print("                          \/              /    |/                              ")
+        print("                           \/            /     ||                              ")
+        print("                            \/          /      |\                              ")
+        print("                             \/        /       //////////\                     ")
+        print("                              \/      /                  \|                    ")
+        print("                               \/    /                   ||                    ")
+        print("                                \/  /                    /|                    ")
+        print("                                 \//           ///////////                     ")
+        print("\n\n\n                                                                                                  ")
+        print("    ||   \       |//////////  ||     //                                        ")
+        print("    ||     \     |/        \| ||    //                                         ")
+        print("    ||       \   ||        // ||   //                                          ")
+        print("    ||        \  ||      //   ||  //                                           ")
+        print("    ||         | ||   //      |||((                                            ")
+        print("    ||        /  ||   |\      ||  |\                                           ")
+        print("    ||       /   ||    |\     ||   |\                                          ")
+        print("    ||     /     ||     |\    ||    |\                                         ")
+        print("    ||   /       ||      |\   ||     |\                                        ")
+
+
+        print("    /////////// ||         || |||||||||||| ||     // ||||||||||||              ")
+        print("   |/           || \      / | |          | ||    //  |/                        ")
+        print("   ||           ||  \    /  | |          | ||   //   |                         ")
+        print("   |\           ||   \  /   | |          | ||  //    |\                        ")
+        print("    \///////\   ||    \/    | |          | |||((     ||||||||||||              ")
+        print("            \|  ||          | |          | ||  |\    |/                        ")
+        print("            ||  ||          | |          | ||   |\   |                         ")
+        print("            /|  ||          | |          | ||    |\  |\                        ")
+        print("   //////////   ||          | |||||||||||| ||     |\ ||||||||||||              \n")
+def welcome_user(wlcm):
+    if wlcm == True:
+        print("\n\n")
+        print("       |\                     / |||||||||||| ||           ||||||||||||| |||||||||||| ||         || ||||||||||||    ||")
+        print("        |\                   /  |/           ||           |             |          | || \      / | |/              ||")
+        print("         |\                 /   |            ||           |             |          | ||  \    /  | |               ||")
+        print("          |\               /    |\           ||           |             |          | ||   \  /   | |\              ||")
+        print("           |\             /     |||||||||||| ||           |             |          | ||    \/    | ||||||||||||    ||")
+        print("            |\     /\    /      |/           ||           |             |          | ||          | |/              ||")
+        print("             |\   /  \  /       |            ||           |             |          | ||          | |               ||")
+        print("              |\ /    \/        |\           ||           |             |          | ||          | |\              ||")
+        print("               |\/    \/        |||||||||||| |||||||||||| ||||||||||||| |||||||||||| ||          | ||||||||||||    ◉\n\n")
+def dragon_smoke(smoke):
+    if smoke == True:
+        print("                                            ^                  ")
+        print("                 ^                           ^^)               ")
+        print("                ^^>>                     ^>>>>>>^              ")
+        print("              <<- >                   ^>^>^^^^^^^^^^^>         ")
+        print("             ^^^^ >                  ^^^>^>^^^^^^^^^^          ")
+        print("         ^>>>>>>>>>>^^>             ^>>^>^^^^^^^^^             ")
+        print("         >>^^^^^>^^^^^^^^^>          >^^>>>^>^^^^^^^^^         ")
+        print("     ^^^>^^^^^^^^^^>>^            >^^^^^^^>^^^^^^^^^^          ")
+        print("  <<<<^^^^^^^^^^^^^              >>^^^^^^^^>^^^^^^^^^^^^>      ")
+        print("    ^^^^>^^^^^^^^>>           >>>>^^^^^^^^>^^^^^^^             ")
+        print("        ^^^^^^^>^^^^^^^>       >^^^>>^^^^^^^^^>^^^             ")
+        print("            <^^^^^^^^^^^        >^^^^^^^^^^^^^>                ")
+        print("             <<^^^^^^^^        >^^^^^^^^^^>>                   ")
+        print("             ^^^^^^^^    >>>>^^>>^^>                           ")
+        print("              >>>>>>>>>>>>^^^>>>>>                             ")
+        print("           ^^^^^^>^>^>^>^>^>>>>>>>>>>                          ")
+        print("        ^^^^^  ^>>//////////////////\>>>                       ")
+        print("       ^     ^//**>>>>>>////////////...                        ")
+        print("      ( ^  ///\        (|) (|)>>>>>>>>>>                        ")
+        print("      \  |//> </          >>^>^^^^>>>>>^>^^>>>                 ")
+        print("        \ /> </          ^^^        >>>>>>>>^^^^/                ")
+        print("                        ^^                \(////               ")
+        print("                        ^                   \(//               ")     
+        print("                                              \(/               ")
+def god_mode(activation):
+    if activation == True:
+        print("\n|----------- |----------| |    \             ")
+        print("|            |          | |      \          ")
+        print("|----------| |          | |        |       ")
+        print("|          | |          | |       /        ")
+        print("|__________| |----------| |     /           \n")
+        print("| \       /| |----------| |    \     |--------")
+        print("|   \   /  | |          | |      \   |        ")
+        print("|     |    | |          | |        | |-----  ")
+        print("|          | |          | |       /  |       ")
+        print("|          | |----------| |     /    |--------\n")
+
+#------------------------------------------------------------------------------------
+
+#THIS IS WHERE I CAN CREATE CAVES AND WHAT IS INSIDE OF IT
 class Caves:
     def __init__(self, name, intro, monster, items):
         self.name = name
@@ -29,7 +127,10 @@ class Caves:
     # def current_room(self):
     #     print(f"You are in {self.name}")
 
-#This is the final battle with the Dragon "Darcksmoke"
+#------------------------------------------------------------------------------------
+
+
+#THIS IS THE FINAL BATTLE WITH THE DRAGON "DARKSMOKE"
 class Final_battle:
     def __init__(self, name, health, powers, items):
         self.name = name
@@ -45,40 +146,53 @@ class Final_battle:
 
     def attack(self, dragon):
         ability_style = input(f"Enter the ability you want to use {self.powers}\n >> ")
+        splt = ability_style.split(" ")
         if ability_style == "ability3" and self.powers["ability3"] == True:
             print("Your ability has stunned the enemy ")
+            yoohin1 = ("Yoohin Han", 2200, {"frosty_sigh": 200, "shadowless_day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
+            darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 280, "emperor-": 250, "black-blood": True, "venom": 180, "..": True,"god-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
+            self.powers.update(yoohin1)
 
-        elif ability_style == "ability3" and self.powers["ability3"] == False:
-            print("You can't stun your enemy")
+        elif ability_style == "sandals-of-hermes":
+            print("_`_``_`                        ")
+            print("  `--|-`---`                   ")
+            print("    ````-|----^^^^^^^^^/        ")
+            print("       ---|-^^^^^^^/           ")
+            print("         -^^^^^^^^^^^^^\       ")
+            print("          \^^^^^^^^^^^^^^^|    ")
+            print("           \^^^^^^^^^^^^/      ")
+            print("Your speed increased by 10%")
 
-        elif ability_style == "ability5":
-            print("Your next ability is going to be '0%' stronger")
+        elif ability_style == "absolute-zero":
+            print("You stunned your enemy, dealing with 10 damage")
+            dragon.health = dragon.health - 10
+
+        elif splt[0] == "use":
+            if splt[1] == "health_potion":
+                print("you have use your health potion")
+                self.health = self.health + 1000
+            elif splt[1] == "unknown_potion":
+                god_mode(True)
+                self.health = self.health + 800
+                dragon.health = dragon.health - 150
+            else:
+                print("you missed your ability !!")
+
+        elif ability_style == "black-blood":
+            print("Darksmoke slows you down, you have lost the sandals of hermes")
+        elif ability_style == "..":
+            print("Darksmoke increased his health by 100")
+            dragon.health = dragon.health + 100
+
         else:
             dragon.health = dragon.health - self.powers[ability_style]
             print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
 
-        # dragon.health = dragon.health - self.powers[ability_style]
-        # print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
 
-# def nav():
-#     Caves.enter(cave1)
-#     print("Your going to cave 2")
-#     Caves.cave_2("cave2")
-#     user_choice = input("What do you want to do?")
-#     splitting = user_choice.split(" ")
-#     if user_choice == "move":
-#         if splitting[1] == "cave 3":
-#             Caves.cave_3("cave3")
-#         elif splitting[1] == "cave 4":
-#             Caves.cave_4("cave4")
-#         elif splitting[1] == "cave 6":
-#             Caves.cave_6("cave5")
-
-#     elif user_choice == "look":
-#         print("Collect the letter")
-# nav()
+#------------------------------------------------------------------------------------
 
 
+#INTRODUCTION AND HOW TO MOVE FROM CAVE TO CAVE
 intro_1 = "\nCollect items in order to defeat The Dragon \nYou can collect items from defeating monster along the way\n\nYoohin Han: I wish I could have saved my brother\nNo matter what I'm going to avenge him"
 intro_2 = "\nYoohin Han: I have 3 options, move to cave3, cave4 or cave 6\nWhich one should I choose?"
 intro_3 = "\nYou are in cave 3!\nYoohin Han: I'm searching for something that might have left my brother for me\n"
@@ -108,9 +222,13 @@ cave8.paths = [cave6]
 
 current_cave = cave2
 
-#This is the start where the user enter if he wants to play
+
+#------------------------------------------------------------------------------------
+
+#THIS IS WHERE THE USER STARTS TO PLAY THE GAME
 user_start = input("If your ready to start the game type 'start': \n").lower()
 if user_start == "start":
+    welcome_user(True)
     print("\n\t\tWelcome Yoohin Han! \n\tYou have sucessfully enter the Dungeon.")
     print("\tClear the dungeon in order to exit from it")
     print("\tGood luck!\n")
@@ -133,7 +251,7 @@ def nav(input):
 
     if current_input == "help":
         print("\tType 'look' to look everything in that cave\n \tType 'move' to move to another cave")
-        print("\tType 'use' to use a item you have\n\tType 'take' to add an item\n\tType 'cave' to know where can you go")
+        print("\tType 'use' to use a item you have\n\tType 'take' to add an item\n\t Type 'cave' to know where can you go")
 
     if splitting[0] == "move":
         move =  False
@@ -171,9 +289,12 @@ def nav(input):
                 
         
     elif splitting[0] == "attack" and current_cave.monster == True:
+        print("\n\n\n")
+        monster_vs(True)
 
-        yoohin = Final_battle("Yoohin Han", 1000, {"ability1": 200, "ability2": 150, "ability3": True, "ability4": 180, "ability5": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
-        darcksmoke = Final_battle("Darksmoke", 1500, {"a1": 10, "a2": 150, "a3": True, "a4": 180, "a5": True,"ult": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
+        print("Yoohin Han : I'll have to kill you since you killed my little brother, I don't have any choice\n ")
+        yoohin = Final_battle("Yoohin Han", 2200, {"frosty_sigh": 200, "shadowless_day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
+        darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 280, "emperor": 250, "black-blood": True, "venom": 180, "..": True,"god-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
 
         while yoohin.is_alive() and darcksmoke.is_alive():
             yoohin.attack(darcksmoke)
@@ -182,20 +303,33 @@ def nav(input):
         if darcksmoke.health < 0:
             print("The Tier-1 Dragon Darksmoke has been defeated\n You won")
             print("You have acquire GOD MODE")
-            print("\n\t\tThank you for playing the game!")
+            print("\n\t\tThank you for playing the game!\n")
+            dragon_smoke(True)
             Darcksmoke_is_alive = False
         else:
             print("You have been defeated")
+            print("\t\t\t\t^\t^")
+            print("\t\t\t\t^^\t^^")
+            dragon_smoke(True)
             Darcksmoke_is_alive = False
+    elif splitting[0] == "attack" and current_cave.monster == False:
+        print("There is no monster in this cave")
+    elif splitting[0] == "die":
+        print("You have die!")
+        print("But your angel brother saved you to avenge him.")
+    else:
+        print("You can't do that")
 
 
 
+#------------------------------------------------------------------------------------
 
+#CODE THAT MIGHT BE USEFUL OR TO REMEMBER HOW I STARTED
 
-# game_rules = input("type 'help' to learn more about the game:\n").lower()
-# if game_rules == "help":
-#     print("\tType 'look' to look everything in that cave\n \tType 'move' to move to another cave")
-#     print("\tType 'use' to use a item you have\n\tType 'cave' to know in which cave are you at\n")
+# # game_rules = input("type 'help' to learn more about the game:\n").lower()
+# # if game_rules == "help":
+# #     print("\tType 'look' to look everything in that cave\n \tType 'move' to move to another cave")
+# #     print("\tType 'use' to use a item you have\n\tType 'cave' to know in which cave are you at\n")
 
 
 
@@ -236,3 +370,66 @@ while user_playing and Darcksmoke_is_alive == True:
 # def  enter_room(self):
 #     print(room.description)
 
+# print("\n\n\n")
+
+# print("        |||||||||   |||||||| |||||||||||| |||||||||||| |          | |||| ||        |              ")
+# print("           ||    | |     ||  |          | |          | |          | |||| | |       |              ")
+# print("              |   |   |      |          | |          | |          | |||| |  |      |              ")
+# print("                |   |        |          | |          | |          | |||| |   |     |              ")
+# print("                |   |        |          | |          | |||||||||||| |||| |    |    |              ")
+# print("                |   |        |          | |          | |          | |||| |     |   |              ")
+# print("                |   |        |          | |          | |          | |||| |      |  |              ")
+# print("                |   |        |          | |          | |          | |||| |       | |              ")
+# print("                |||||        |||||||||||| |||||||||||| |          | |||| |        ||              ")
+# print("\n\n\n                                                                                                  ")
+# print("                         \/                /    ///////////                    ")
+# print("                          \/              /    |/                              ")
+# print("                           \/            /     ||                              ")
+# print("                            \/          /      |\                              ")
+# print("                             \/        /       //////////\                     ")
+# print("                              \/      /                  \|                    ")
+# print("                               \/    /                   ||                    ")
+# print("                                \/  /                    /|                    ")
+# print("                                 \//           ///////////                     ")
+# print("\n\n\n                                                                                                  ")
+# print("    ||   \       |//////////  ||     //                                        ")
+# print("    ||     \     |/        \| ||    //                                         ")
+# print("    ||       \   ||        // ||   //                                          ")
+# print("    ||        \  ||      //   ||  //                                           ")
+# print("    ||         | ||   //      |||((                                            ")
+# print("    ||        /  ||   |\      ||  |\                                           ")
+# print("    ||       /   ||    |\     ||   |\                                          ")
+# print("    ||     /     ||     |\    ||    |\                                         ")
+# print("    ||   /       ||      |\   ||     |\                                        ")
+
+
+# print("    /////////// ||         || |||||||||||| ||     // ||||||||||||              ")
+# print("   |/           || \      / | |          | ||    //  |/                        ")
+# print("   ||           ||  \    /  | |          | ||   //   |                         ")
+# print("   |\           ||   \  /   | |          | ||  //    |\                        ")
+# print("    \///////\   ||    \/    | |          | |||((     ||||||||||||              ")
+# print("            \|  ||          | |          | ||  |\    |/                        ")
+# print("            ||  ||          | |          | ||   |\   |                         ")
+# print("            /|  ||          | |          | ||    |\  |\                        ")
+# print("   //////////   ||          | |||||||||||| ||     |\ ||||||||||||              ")
+
+
+# print("       |\                      / |||||||||||| ||           ||||||||||||| |||||||||||| ||         || |||||||||||| ")
+# print("        |\                    /  |/           ||           |             |          | || \      / | |/           ")
+# print("         |\                  /   |            ||           |             |          | ||  \    /  | |            ")
+# print("          |\                /    |\           ||           |             |          | ||   \  /   | |\           ")
+# print("           |\              /     |||||||||||| ||           |             |          | ||    \/    | |||||||||||| ")
+# print("            |\     /\     /      |/           ||           |             |          | ||          | |/           ")
+# print("             |\   /  \   /       |            ||           |             |          | ||          | |            ")
+# print("              |\ /    \ /        |\           ||           |             |          | ||          | |\           ")
+# print("               |\/    \/         |||||||||||| |||||||||||| ||||||||||||| |||||||||||| ||          | |||||||||||| ")
+
+
+
+
+
+# yoohin = Final_battle("Yoohin Han", 1000, {"ability1": 200, "ability2": 150, "ability3": True, "ability4": 180, "ability5": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
+        # darcksmoke = Final_battle("Darksmoke", 1500, {"a1": 10, "a2": 150, "a3": True, "a4": 180, "a5": True,"ult": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
+
+#         # dragon.health = dragon.health - self.powers[ability_style]
+#         # print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
