@@ -4,7 +4,7 @@
 user_playing = True
 player_items = []
 Darcksmoke_is_alive = True
-
+import random
 # START OF THE FIGURES AND SOME ANIMATION 
 def monster_vs(enemy):
     if enemy == True:
@@ -98,6 +98,22 @@ def god_mode(activation):
         print("|     |    | |          | |        | |-----  ")
         print("|          | |          | |       /  |       ")
         print("|          | |----------| |     /    |--------\n")
+def sword(active):
+    if active == True:
+        print("\n            /\         ")
+        print("           / 和\         ")
+        print("           | 的|        ")
+        print("           | 和|        ")
+        print("           | 平|        ")
+        print("           | 破|        ")
+        print("           | 冰|        ")
+        print("           | 爱|        ")
+        print("           | 船|        ")
+        print("      \--\ |和和| /--/        ")
+        print("           \.../        ")
+        print("            |☯|        ")
+        print("            |☯|        ")
+        print("             ☯          \n")                               
 
 #------------------------------------------------------------------------------------
 
@@ -129,9 +145,14 @@ class Caves:
 
 #------------------------------------------------------------------------------------
 
+list1 = [1, 2, 3, 4, 5, 6]
+print(random.choice(list1))
 
 #THIS IS THE FINAL BATTLE WITH THE DRAGON "DARKSMOKE"
 class Final_battle:
+    global player_items
+    # list1 = [0, 1, 2, 3, 4, 5]
+    # edge = random.choice(list1)
     def __init__(self, name, health, powers, items):
         self.name = name
         self.health = health
@@ -145,48 +166,79 @@ class Final_battle:
         return self.health>0
 
     def attack(self, dragon):
+        list1 = [1, 2, 3, 4, 5, 6]
+        edge = random.choice(list1)
+        print(edge)
         ability_style = input(f"Enter the ability you want to use {self.powers}\n >> ")
         splt = ability_style.split(" ")
-        if ability_style == "ability3" and self.powers["ability3"] == True:
-            print("Your ability has stunned the enemy ")
-            yoohin1 = ("Yoohin Han", 2200, {"frosty_sigh": 200, "shadowless_day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
-            darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 280, "emperor-": 250, "black-blood": True, "venom": 180, "..": True,"god-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
-            self.powers.update(yoohin1)
+        if edge>2:
+            if ability_style == "sandals-of-hermes":
+                print("\n_`_``_`                        ")
+                print("  `--|-`---`                   ")
+                print("    ````-|----^^^^^^^^^/        ")
+                print("       ---|-^^^^^^^/           ")
+                print("         -^^^^^^^^^^^^^\       ")
+                print("          \^^^^^^^^^^^^^^^|    ")
+                print("           \^^^^^^^^^^^^/      ")
+                print("Your speed increased by 10%\n")
 
-        elif ability_style == "sandals-of-hermes":
-            print("_`_``_`                        ")
-            print("  `--|-`---`                   ")
-            print("    ````-|----^^^^^^^^^/        ")
-            print("       ---|-^^^^^^^/           ")
-            print("         -^^^^^^^^^^^^^\       ")
-            print("          \^^^^^^^^^^^^^^^|    ")
-            print("           \^^^^^^^^^^^^/      ")
-            print("Your speed increased by 10%")
+            elif ability_style == "absolute-zero":
+                print("You stunned your enemy, dealing with 10 damage")
+                dragon.health = dragon.health - 10
+                print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
+            elif splt[0] == "use" and splt[1] in player_items:
+                if splt[1] == "health_potion":
+                    print("you have use your health potion")
+                    self.health = self.health + 1000
+                    print(self.health)
+                    player_items.remove("health_potion")
 
-        elif ability_style == "absolute-zero":
-            print("You stunned your enemy, dealing with 10 damage")
-            dragon.health = dragon.health - 10
+                elif splt[1] == "unknown_potion" and edge>=4:
+                    god_mode(True)
+                    self.health = self.health + 1000
+                    print("\n\n CONGRATULATIONS YOOHIN HAN!")
+                    print("\n\n YOU HAVE REACH THE LEVEL OF A GOD")
+                    dragon.health = dragon.health - 1050
+                    print("You are in GOD MODE")
+                    print("Darksmoke it's suprised that you have reach such level")
+                    print("Yoohin Han: For the sake of my brother you are going to die!!")
+                    print(f"Your health increased: {self.health}")
+                    player_items.remove("unknown_potion")
 
-        elif splt[0] == "use":
-            if splt[1] == "health_potion":
-                print("you have use your health potion")
-                self.health = self.health + 1000
-            elif splt[1] == "unknown_potion":
-                god_mode(True)
-                self.health = self.health + 800
-                dragon.health = dragon.health - 150
+                elif splt[1] == "unknown_potion" and edge<4:
+                    print("OPS! you drink poison from darksmoke!")
+                    print("in your attemp to hit him with all your power had left dealt 500 damage but you lost 850 of life")
+                    self.health = self.health - 850
+                    print("Yoohin Han: I have to finish him quick or else I'm going to be dead!")
+                    dragon.health = dragon.health - 500
+                    print("Darksmoke laugh of you")
+                    print("Darksmoke: You lowly human dare to defeat me?! Darksmoke  HAHAHAAH!")
+                    print("Darksmoke: You are dead!")
+
+                elif splt[1] == "sword":
+                    sword(True)
+                    print("You have sucessfully used sword")
+                    dragon.health = dragon.health - 250
+                    print(dragon.health)
+                    player_items.remove("sword")
+            
+            elif splt[0] == "use" and splt[1] not in player_items:
+                print("You don't have that item")
+                self.attack(dragon)
+
+            elif ability_style == "black-blood":
+                print("Darksmoke slows you down, you have lost the sandals of hermes")
+            elif ability_style == "..":
+                print("Darksmoke increased his health by 100")
+                dragon.health = dragon.health + 100
+            elif ability_style== "ultimate-attack-god-of-hell":
+                dragon.health = dragon.health - 1500
+                print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
             else:
-                print("you missed your ability !!")
-
-        elif ability_style == "black-blood":
-            print("Darksmoke slows you down, you have lost the sandals of hermes")
-        elif ability_style == "..":
-            print("Darksmoke increased his health by 100")
-            dragon.health = dragon.health + 100
-
+                dragon.health = dragon.health - self.powers[ability_style]
+                print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
         else:
-            dragon.health = dragon.health - self.powers[ability_style]
-            print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
+            print("You missed your ability")
 
 
 #------------------------------------------------------------------------------------
@@ -195,18 +247,18 @@ class Final_battle:
 #INTRODUCTION AND HOW TO MOVE FROM CAVE TO CAVE
 intro_1 = "\nCollect items in order to defeat The Dragon \nYou can collect items from defeating monster along the way\n\nYoohin Han: I wish I could have saved my brother\nNo matter what I'm going to avenge him"
 intro_2 = "\nYoohin Han: I have 3 options, move to cave3, cave4 or cave 6\nWhich one should I choose?"
-intro_3 = "\nYou are in cave 3!\nYoohin Han: I'm searching for something that might have left my brother for me\n"
-intro_4 = "\nYou are in cave 4!\nDefeat the monster\n"
-intro_5 = "\nYou are in cave 5!\nYoohin Han:\n"
-intro_6 = "\nYou are in cave 6!\nYoohin Han: What can I do?\n"
-intro_7 = "\nYou are in cave 7!\nYoohin Ha: I finally found you\n"
-intro_8 = "\nYou are in cave 8!\nYoohin Ha: Potion\n"
+intro_3 = "\nYou are in cave 3!\n\nYoohin Han: I wish my I could have been when my brother needed my, but I couldn't (Yoohin starts to cry)\nYoohin Han: I'm searching for something that might have left my brother for me\n"
+intro_4 = "\nYou are in cave 4!\n\nYoohin Han: I need items in order to defeat this dragon! There has to be something useful for me here\n"
+intro_5 = "\nYou are in cave 5!\n\nYoohin Han: I found it ! There is a key in the rocks!\n"
+intro_6 = "\nYou are in cave 6!\n\nYoohin Han: Brother if you are watching me please forgive me! for not beign there for you brother!\n"
+intro_7 = "\nYou are in cave 7!\n\nYoohin Ha: I finally found you darksmoke, now there is no going back, I'll fight you to the death\n"
+intro_8 = "\nYou are in cave 8!\n\nYoohin Ha: I need potions!\nFound them!"
 
 cave1 = Caves("cave1", intro_1, False, [])
 cave2 = Caves("cave2", intro_2, False, [])
 cave3 = Caves("cave3", intro_3, False, ["letter"])
-cave4 = Caves("cave4", intro_4, False, ["key"])
-cave5 = Caves("cave5", intro_5, False, ["sword"])
+cave4 = Caves("cave4", intro_4, False, ["sword"])
+cave5 = Caves("cave5", intro_5, False, ["key"])
 cave6 = Caves("cave6", intro_6, False, [])
 cave7 = Caves("cave7", intro_7, True, [])
 cave7.is_lock = True
@@ -250,8 +302,9 @@ def nav(input):
     splitting = current_input.split(" ")
 
     if current_input == "help":
-        print("\tType 'look' to look everything in that cave\n \tType 'move' to move to another cave")
-        print("\tType 'use' to use a item you have\n\tType 'take' to add an item\n\t Type 'cave' to know where can you go")
+        print("\n\tType 'look' to look everything in that cave\n \tType 'move ____' and the cave you want to move")
+        print("\tType 'use' to use a item you have\n\tType 'take' to add an item\n\tType 'cave' to know where can you go")
+        print("\tType 'attack' when there is a monster in a cave\n")
 
     if splitting[0] == "move":
         move =  False
@@ -266,14 +319,14 @@ def nav(input):
 
     elif splitting[0] == "look":
         for item in current_cave.items:
-            print("There is/are: " + item)
+            print("There is: " + item)
 
     elif splitting[0] == "take":
         taking_item = str(splitting[1])
         c_room = current_cave
         print(taking_item)
 
-        if taking_item in current_cave.items:
+        if taking_item in current_cave.items: 
             player_items.append(taking_item)
             print("Your current items is/are: "+ str(player_items))
         else:
@@ -294,7 +347,7 @@ def nav(input):
 
         print("Yoohin Han : I'll have to kill you since you killed my little brother, I don't have any choice\n ")
         yoohin = Final_battle("Yoohin Han", 2200, {"frosty_sigh": 200, "shadowless_day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
-        darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 280, "emperor": 250, "black-blood": True, "venom": 180, "..": True,"god-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
+        darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 480, "emperor": 350, "black-blood": True, "venom": 380, "..": True,"king-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
 
         while yoohin.is_alive() and darcksmoke.is_alive():
             yoohin.attack(darcksmoke)
@@ -308,10 +361,11 @@ def nav(input):
             Darcksmoke_is_alive = False
         else:
             print("You have been defeated")
-            print("\t\t\t\t^\t^")
+            print("\t\tDarksmoke will rule the world after escaping The dungeon!")
             print("\t\t\t\t^^\t^^")
             dragon_smoke(True)
             Darcksmoke_is_alive = False
+        exit()
     elif splitting[0] == "attack" and current_cave.monster == False:
         print("There is no monster in this cave")
     elif splitting[0] == "die":
@@ -333,7 +387,7 @@ def nav(input):
 
 
 
-while user_playing and Darcksmoke_is_alive == True:
+while user_playing:
     nav(player_question())
 
 
@@ -433,3 +487,12 @@ while user_playing and Darcksmoke_is_alive == True:
 
 #         # dragon.health = dragon.health - self.powers[ability_style]
 #         # print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
+
+
+
+                 __
+                |◑◑|
+                |◑◑|
+               /◑◑◑◑\
+             /◑◑◑◑◑◑◑◑\
+           / _◑_◑_◑_◑_◑_\
