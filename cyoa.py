@@ -114,7 +114,14 @@ def sword(active):
         print("            |☯|        ")
         print("            |☯|        ")
         print("             ☯          \n")                               
-
+def potion(drink):
+    if drink == True:
+        print("\n             __     ")
+        print("            |◑◑|    ")
+        print("            |◑◑|    ")
+        print("           /◑◑◑◑\    ")
+        print("         /◑◑◑◑◑◑◑◑\    ")
+        print("       / _◑_◑_◑_◑_◑_\    \n")
 #------------------------------------------------------------------------------------
 
 #THIS IS WHERE I CAN CREATE CAVES AND WHAT IS INSIDE OF IT
@@ -188,9 +195,10 @@ class Final_battle:
                 print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
             elif splt[0] == "use" and splt[1] in player_items:
                 if splt[1] == "health_potion":
-                    print("you have use your health potion")
+                    potion(True)
+                    print("\nyou have use your health potion")
                     self.health = self.health + 1000
-                    print(self.health)
+                    print("your health is: " + str(self.health))
                     player_items.remove("health_potion")
 
                 elif splt[1] == "unknown_potion" and edge>=4:
@@ -205,7 +213,8 @@ class Final_battle:
                     print(f"Your health increased: {self.health}")
                     player_items.remove("unknown_potion")
 
-                elif splt[1] == "unknown_potion" and edge<4:
+                elif splt[1] == "unknown_potion" and edge<=4:
+                    potion(True)
                     print("OPS! you drink poison from darksmoke!")
                     print("in your attemp to hit him with all your power had left dealt 500 damage but you lost 850 of life")
                     self.health = self.health - 850
@@ -218,8 +227,8 @@ class Final_battle:
                 elif splt[1] == "sword":
                     sword(True)
                     print("You have sucessfully used sword")
-                    dragon.health = dragon.health - 250
-                    print(dragon.health)
+                    dragon.health = dragon.health - 450
+                    print("Darksmoke health: " + str(dragon.health))
                     player_items.remove("sword")
             
             elif splt[0] == "use" and splt[1] not in player_items:
@@ -231,9 +240,13 @@ class Final_battle:
             elif ability_style == "..":
                 print("Darksmoke increased his health by 100")
                 dragon.health = dragon.health + 100
+            #cheat
             elif ability_style== "ultimate-attack-god-of-hell":
                 dragon.health = dragon.health - 1500
                 print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
+            elif ability_style == "heal-god":
+                self.health = self.health + 1000
+            #end of cheat
             else:
                 dragon.health = dragon.health - self.powers[ability_style]
                 print(f"\n{self.name} attacks {dragon.name}!\n{dragon.name} health = {dragon.health}\n")
@@ -346,8 +359,8 @@ def nav(input):
         monster_vs(True)
 
         print("Yoohin Han : I'll have to kill you since you killed my little brother, I don't have any choice\n ")
-        yoohin = Final_battle("Yoohin Han", 2200, {"frosty_sigh": 200, "shadowless_day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
-        darcksmoke = Final_battle("Darksmoke", 2500, {"flames_of_hell": 480, "emperor": 350, "black-blood": True, "venom": 380, "..": True,"king-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
+        yoohin = Final_battle("Yoohin Han", 2200, {"frosty-sigh": 200, "shadowless-day": 250, "sandals-of-hermes": True, "blue-willows": 180, "absolute-zero": True,"ultimate": 400}, {"potion": 0.4, "sword": 0.5, "unknown_potion": 0.2})
+        darcksmoke = Final_battle("Darksmoke", 2500, {"flames-of-hell": 480, "emperor": 350, "black-blood": True, "venom": 380, "..": True,"king-of-hell": 500}, {"pot": 0.2, "Flames of hell": 0.5, "cool": 0.2})
 
         while yoohin.is_alive() and darcksmoke.is_alive():
             yoohin.attack(darcksmoke)
@@ -490,9 +503,261 @@ while user_playing:
 
 
 
-                 __
-                |◑◑|
-                |◑◑|
-               /◑◑◑◑\
-             /◑◑◑◑◑◑◑◑\
-           / _◑_◑_◑_◑_◑_\
+    # print("             __     ")
+    # print("            |◑◑|    ")
+    # print("            |◑◑|    ")
+    # print("           /◑◑◑◑\    ")
+    # print("         /◑◑◑◑◑◑◑◑\    ")
+    # print("       / _◑_◑_◑_◑_◑_\    ")
+
+
+# #number 2 quesion
+# def this_cave2(map2)
+#     if map2 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |      cave3   |             |              |               ")
+#         print("    |              |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |     You      |        |              |        |              | ")
+#         print("    |    are       |   ↔    |      cave6   |   ↔    |              | ")
+#         print("    |       here   |        |              |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |      cave4   |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+# # cave 3 letter
+# def this_cave3(map3)
+#     if map2 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |    You       |             |              |                   ")
+#         print("    |     are      |             |              |               ")
+#         print("    |    Here      |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |      cave2   |   ↔    |              |   ↔    |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+
+# # cave 4 sword
+# def this_cave4(map4)
+#     if map4 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |               ")
+#         print("    |              |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |      cave2   |   ↔    |              |   ↔    |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |     You      |                                         ")
+#         print("            |    are       |                                         ")
+#         print("            |      here    |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |      cave5   |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+
+
+# #cave 5 key
+# def this_cave5(map5)
+#     if map5 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |               ")
+#         print("    |              |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |   ↔    |              |   ↔    |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |      cave4   |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |     You      |                                                 ")
+#         print("    |    are       |                                                 ")
+#         print("    |       here   |                                              ")
+#         print("    |______________|                                             ")
+
+
+
+
+# # cave 6 nothing
+# def this_cave6(map6)
+#     if map6 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |      cave7   |               ")
+#         print("    |              |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |     You      |        |              | ")
+#         print("    |      cave2   |   ↔    |    are       |   ↔    |      cave8   | ")
+#         print("    |              |        |       here   |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+
+
+# # cave 7 darksmoke
+# def this_cave7(map7)
+#     if map7 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |     You      |                   ")
+#         print("    |              |             |    are       |               ")
+#         print("    |              |             |       here   |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |   ↔    |      cave6   |   ↔    |              | ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+
+
+
+# # cave 8
+# def this_cave8(map8)
+#     if map8 == True:
+#         print("    ._______________             ._______________                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |                   ")
+#         print("    |              |             |              |               ")
+#         print("    |              |             |              |                   ")
+#         print("    |______________|             |______________|                  ")
+#         print("                                                                   ")
+#         print("           ↕                          ➚                            ")
+#         print("    ._______________        ._______________        ._______________ ")
+#         print("    |              |        |              |        |              | ")
+#         print("    |              |        |              |        |     You      | ")
+#         print("    |              |   ↔    |              |   ↔    |    are       | ")
+#         print("    |              |        |              |        |       here   | ")
+#         print("    |______________|        |______________|        |______________| ")
+#         print("                                                                    ")
+#         print("                ➘                                                   ")
+#         print("            ._______________                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |              |                                         ")
+#         print("            |______________|                                        ")
+#         print("                                                                     ")
+#         print("                ↙                                                     ")
+#         print("    ._______________                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                                 ")
+#         print("    |              |                                              ")
+#         print("    |______________|                                             ")
+
+    
